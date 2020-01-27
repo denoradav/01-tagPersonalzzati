@@ -1,4 +1,10 @@
 <webapp>
+    <display-name>
+        Servlet di saluto
+    </display-name>   
+    <description>
+        Si tratta di una applcazione dove facciamo esempi di Servlet
+    </description>
     <servlet>
         <servlet-name>miaservlet</servlet-name>
         <servlet-class>miaClasse</servlet-class>
