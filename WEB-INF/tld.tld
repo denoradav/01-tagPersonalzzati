@@ -31,4 +31,10 @@
       <tagclass>com.esami.contamelo</tagclass>
       <bodycontent>JSP</bodycontent>
     </tag>
+
+    <tag>
+      <name>iterate3</name>
+      <tagclass>com.esami.contamelo2</tagclass>
+      <bodycontent>JSP</bodycontent>
+    </tag>
  </taglib>
