@@ -44,7 +44,7 @@
       <bodycontent>JSP</bodycontent>
       <attribute>
         <name>max</name>
-        <required>true</required>
+        <required>false</required>
         <rtexprvalue>true</rtexprvalue>
       </attribute>
     </tag>

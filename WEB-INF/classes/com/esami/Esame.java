@@ -1,6 +1,6 @@
 package com.esami;
 
-public class Esame{
+public class Esame implements java.io.Serializable{
 	private String esame;
 	private int voto;
 	
