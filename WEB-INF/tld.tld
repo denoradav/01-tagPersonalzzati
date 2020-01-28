@@ -37,4 +37,15 @@
       <tagclass>com.esami.contamelo2</tagclass>
       <bodycontent>JSP</bodycontent>
     </tag>
+
+    <tag>
+      <name>esami</name>
+      <tagclass>com.esami.ListaEsami</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <attribute>
+        <name>max</name>
+        <required>true</required>
+        <rtexprvalue>true</rtexprvalue>
+      </attribute>
+    </tag>
  </taglib>

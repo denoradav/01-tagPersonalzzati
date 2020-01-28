@@ -44,7 +44,7 @@ public class Iterate extends BodyTagSupport {
   */
 
 
-  public int doAfetrBody() throws JspException{
+  public int doAfterBody() throws JspException{
     if (it.hasNext()){
       pageContext.setAttribute("item",it.next());
       return EVAL_BODY_AGAIN;
