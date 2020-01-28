@@ -11,6 +11,7 @@ public class Iterate extends BodyTagSupport {
   private Iterator it;
   private Esame es;
   private int media = 0;
+  private String bla;
 
   public void setCollection (Collection collection) {
     this.collection=collection;
@@ -20,56 +21,30 @@ public class Iterate extends BodyTagSupport {
     return collection.size() > 0? EVAL_BODY_BUFFERED : SKIP_BODY;
   }
 
-  /*public void doInitBody() throws JspException {
-    it=collection.iterator();
-    pageContext.setAttribute("item", it.next())
-    ;
-  }*/
-
+  
   public void doInitBody() throws JspException{
     it = collection.iterator();
     es = (Esame)it.next();
     pageContext.setAttribute("item",es);
     media = es.getVoto();
-    try {
-     
-      getPreviousOut().print("<br/><font size=\"4\" color=\"red\">Other way: </font>");
-    } catch (IOException e) {throw new JspException (e.getMessage());}
+    
   }
-
-  /*public int doAfterBody() throws JspException {
-    if (it.hasNext()) {
-      pageContext.setAttribute("item", it.next());
-      return EVAL_BODY_AGAIN;
-    }else {
-      try {getBodyContent().writeOut(getPreviousOut());
-      }catch (java.io.IOException e) {
-        throw new JspException (e.getMessage());
-      }
-      return SKIP_BODY;
-    }
-  }
-
-  */
-
 
   public int doAfterBody() throws JspException{
     if (it.hasNext()){ 
       es = (Esame)it.next();
-      media = es.getVoto();
+      media = media + es.getVoto();
       pageContext.setAttribute("item",es);
+   
       return EVAL_BODY_AGAIN;
     } else {
         try {
-          media = media / collection.size();
-          getPreviousOut().print("<br/><font size=\"4\" color=\"red\">Other way: </font>");
-        } catch (IOException e) {throw new JspException (e.getMessage());}
-        try{
+          media = media /collection.size();
           getBodyContent().writeOut(getPreviousOut());
+          getPreviousOut().print("Media=" + media +"<br>");
         } catch (IOException e) {throw new JspException (e.getMessage());}
-
-      return SKIP_BODY;
-    }
+     }
+     return SKIP_BODY;
   }
 
 

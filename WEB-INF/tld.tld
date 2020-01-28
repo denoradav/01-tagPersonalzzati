@@ -48,4 +48,12 @@
         <rtexprvalue>true</rtexprvalue>
       </attribute>
     </tag>
+
+    <tag>
+      <name>sci</name>
+      <tagclass>com.tag.StampaConIterazione</tagclass>
+      <attribute>
+        <name>max</name>
+      </attribute>
+    </tag>
  </taglib>

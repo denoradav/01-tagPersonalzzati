@@ -39,10 +39,9 @@
     <p>
 
       <it:iterate collection="<%= vettore %>">
-      <jsp:useBean id="item" scope="page" class="com.esami.Esame"/>
+        <jsp:useBean id="item" scope="page" class="com.esami.Esame"/>
         <%=item.getEsame()%> -  <%=item.getVoto()%><br>
-        <%=pageContext.getAttribute("media")%>
-      </it:iterate>
+       </it:iterate>
     </p>
 
   </body>
