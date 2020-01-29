@@ -7,4 +7,15 @@
       <tagclass>com.tag.MiaIterazione</tagclass>
       <bodycontent>JSP</bodycontent>
   </tag>
+
+  <tag>
+      <name>iterate2</name>
+      <tagclass>com.tag.MiaIterazione2</tagclass>
+      <bodycontent>JSP</bodycontent>
+      <attribute>
+        <name>vettore</name>
+        <required>false</required>
+        <rtexprvalue>true</rtexprvalue>
+      </attribute>
+  </tag>
 </taglib>
