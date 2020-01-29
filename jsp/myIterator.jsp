@@ -5,11 +5,11 @@
     <title>My iterator</title>
   </head>
   <body>
-    <%@taglib prefix="myIt" uri="/WEB-INF/tld2.tld" /%>
-    <myIt:iterate>
-        <jsp:useBean id="parola" class="java.lang.String" scope="pagina" />
+    <%@taglib uri="/WEB-INF/tld2.tld" prefix="it" %>
+    <it:iterate>
+        <jsp:useBean id="parola" class="java.lang.String" scope="page" />
         <%=parola%>
-    </myIt:iterate>
+    </it:iterate>
 
   </body>
 </html>
