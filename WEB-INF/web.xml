@@ -1,4 +1,4 @@
-<webapp>
+<web-app>
     <display-name>
         Tag personalizzati
     </display-name>   
@@ -6,54 +6,32 @@
         Si tratta di una applcazione dove facciamo esempi di Servlet
     </description>
     <servlet>
-        <servlet-name>miaservlet</servlet-name>
-        <servlet-class>miaClasse</servlet-class>
+        <servlet-name>login</servlet-name>
+        <servlet-class>Login</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>miaservlet</servlet-name>
-        <url-pattern>/pattamelo</url-pattern>
+        <servlet-name>login</servlet-name>
+        <url-pattern>/pattamelo/loggamelo.jsp</url-pattern>
     </servlet-mapping>
 
-    <!--tag per la gestione della sicurezza-->
     <login-config>
-        <auth-method>BASIC</auth-method>
-        <real-name>Loggate si jela fai</real-name>
+        <auth-method>DIGEST</auth-method>
+        <realm-name>Test per l'autenticazione dichiarativa BASIC</realm-name>
     </login-config>
+
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>security</web-resource-name>    
-            <url-pattern>securty/index.html</url-pattern>
-            <http-method>GET</http-method>
-			<http-method>POST</http-method>
-            <auth-constraint>
-                <role-name>web-users</role-name>
-            </auth-constraint>
+            <web-resource-name>User Basic Authentication</web-resource-name>
+            <url-pattern>/pattamelo/loggamelo.jsp</url-pattern>
+            <url-pattern>/security/*</url-pattern>
         </web-resource-collection>
+        <auth-constraint>
+            <role-name>dichiarativo</role-name>
+        </auth-constraint>
     </security-constraint>
 
-    <security-constraint> 
-        <web-resource-collection><!-- risorse protette -->
-            <web-resource-name>Una pagina protetta </web-resource-name>
-            <url-pattern>/jsps/pagina-protetta.jsp</url-pattern>
-        </web-resource-collection>
-        <auth-constraint><!-- ruoli associati alle risorse -->
-            <role-name>tomcat</role-name>
-            <role-name>role1</role-name>
-    </auth-constraint>
-    </security-constraint>
+    
 
-    <!--<security-constraint>
-    <web-resource-collection>
-      <web-resource-name>2 pagine, l'altro ruolo</web-resource-name>
-      <url-pattern>/pagina_protetta2.html</url-pattern>
-      <url-pattern>/pagina_protetta3.html</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>web</role-name>
-    </auth-constraint>
-  </security-constraint>-->
-    <login-config>
-        <auth-method>BASIC</auth-method>
-        <real-name>Loggate si jela fai</real-name>
-    </login-config>
-</webapp>
+
+    
+</web-app>

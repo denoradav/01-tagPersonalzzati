@@ -9,5 +9,6 @@
 <body>
     <p>Pagina di prova per l'Autenticazione dichiarativa.</p>
     <%= request.getRemoteUser() %><br>
+    <%= request.getAuthType() %><br>
 </body>
 </html>
