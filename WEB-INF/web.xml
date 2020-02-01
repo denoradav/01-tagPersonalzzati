@@ -1,6 +1,6 @@
 <webapp>
     <display-name>
-        Servlet di saluto
+        Tag personalizzati
     </display-name>   
     <description>
         Si tratta di una applcazione dove facciamo esempi di Servlet
@@ -13,4 +13,33 @@
         <servlet-name>miaservlet</servlet-name>
         <url-pattern>/pattamelo</url-pattern>
     </servlet-mapping>
+
+    <!--tag per la gestione della sicurezza-->
+    <login-config>
+        <auth-method>DIGEST</auth-method>
+        <real-name>Loggate si jela fai</real-name>
+    </login-config>
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>security</web-resource-name>    
+            <url-pattern>index.html</url-pattern>
+            <auth-constraint>
+                <role-name>web-users</role-name>
+            </auth-constraint>
+        </web-resource-collection>
+    </security-constraint>
+    <!--<security-constraint>
+    <web-resource-collection>
+      <web-resource-name>2 pagine, l'altro ruolo</web-resource-name>
+      <url-pattern>/pagina_protetta2.html</url-pattern>
+      <url-pattern>/pagina_protetta3.html</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>web</role-name>
+    </auth-constraint>
+  </security-constraint>-->
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <real-name>Loggate si jela fai</real-name>
+    </login-config>
 </webapp>
