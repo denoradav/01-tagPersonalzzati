@@ -8,5 +8,6 @@
 </head>
 <body>
     <p>Pagina di prova per l'Autenticazione dichiarativa.</p>
+    <%= request.getRemoteUser() %><br>
 </body>
 </html>
